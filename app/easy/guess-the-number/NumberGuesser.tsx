@@ -78,10 +78,9 @@ const NumberGuesser = () => {
     <div className={styles.container}>
       <div className={styles.card}>
         <div className={styles.header}>
-          <h1>Number Guesser</h1>
+          <h1>Number Guesser <img src="/react-logo.svg" alt="JS Icon" height={24} width={24} /></h1>
           <p>Pick a number between 1 and 100!</p>
         </div>
-
         <div className={styles.inputGroup}>
           <label htmlFor="guess">Enter your guess:</label>
           <input

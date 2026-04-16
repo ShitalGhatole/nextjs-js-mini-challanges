@@ -45,6 +45,9 @@ $text:      #1a1a1a;
     color: $text;
     letter-spacing: -0.03em;
     margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   p {
