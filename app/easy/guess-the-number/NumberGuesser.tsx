@@ -1,5 +1,5 @@
 'use client'
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import styles from './page.module.scss';
 
 const NumberGuesser = () => {
@@ -14,7 +14,7 @@ const NumberGuesser = () => {
   const [feedback, setFeedback] = useState<string>('Start guessing!');
   const [feedbackType, setFeedbackType] = useState<'default' | 'win' | 'gameover'>('default');
 
-  useState(() => {
+  useEffect(() => {
     inputRef.current?.focus();
   }, []);
   
