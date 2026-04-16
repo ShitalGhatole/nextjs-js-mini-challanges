@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;700;800&display=swap');
+
+// ── Tokens ────────────────────────────────────────────────
+$bg:        #f4f4f0;
+$surface:   #ffffff;
+$border:    #e0e0d8;
+$accent:    #1a1a2e;
+$danger:    #d63030;
+$muted:     #9a9a90;
+$text:      #1a1a1a;
+
+// ── Reset / Base ──────────────────────────────────────────
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $bg;
+  font-family: 'Syne', sans-serif;
+  padding: 2rem;
+}
+
+// ── Card ──────────────────────────────────────────────────
+.card {
+  width: 100%;
+  max-width: 700px;
+  background: $surface;
+  border: 1px solid $border;
+  border-radius: 16px;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+// ── Header ────────────────────────────────────────────────
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: $text;
+    letter-spacing: -0.03em;
+    margin: 0;
+  }
+
+  p {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.92rem;
+    margin: 0;
+    letter-spacing: 0.02em;
+  }
+}
+
+// ── Attempts Stat ─────────────────────────────────────────
+.attemptsRow {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid $border;
+
+  span {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.88rem;
+    padding-bottom: 0.35rem;
+  }
+
+  strong {
+    font-family: 'Syne', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    color: $text;
+    line-height: 1;
+
+    &.low {
+      color: $danger;
+    }
+  }
+}
+
+// ── Input Group ───────────────────────────────────────────
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: $muted;
+  }
+
+  input[type='number'] {
+    width: 100%;
+    box-sizing: border-box;
+    background: $bg;
+    border: 1px solid $border;
+    border-radius: 10px;
+    padding: 0.85rem 1rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: $text;
+    outline: none;
+    transition: border-color 0.2s;
+
+    // Hide spinners
+    -moz-appearance: textfield;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+
+    &::placeholder {
+      color: $muted;
+    }
+
+    &:focus {
+      border-color: $accent;
+      box-shadow: 0 0 0 3px rgba(26, 26, 46, 0.08);
+    }
+  }
+}
+
+// ── Buttons ───────────────────────────────────────────────
+.actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.primaryBtn {
+  flex: 1;
+  padding: 0.85rem 1.2rem;
+  background: $accent;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Syne', sans-serif;
+  font-size: 1rem;
+
+  &:hover:not(:disabled) {
+    opacity: 0.88;
+    transform: translateY(-1px);
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(0);
+  }
+
+  &:disabled {
+    opacity: 0.25;
+    cursor: not-allowed;
+  }
+}
+
+.resetBtn {
+  padding: 0.85rem 1.2rem;
+  background: transparent;
+  color: $muted;
+  border: 1px solid $border;
+  border-radius: 10px;
+  font-family: 'Syne', sans-serif;
+  font-size: 1rem;
+  transition: color 0.15s, border-color 0.15s;
+
+  &:hover {
+    color: $text;
+    border-color: $text;
+  }
+}
+
+// ── Feedback ──────────────────────────────────────────────
+.feedback {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: $text;
+  padding: 0.9rem 1.1rem;
+  background: $bg;
+  border-left: 3px solid $accent;
+  border-radius: 0 8px 8px 0;
+  letter-spacing: 0.01em;
+
+  &.gameover {
+    border-left-color: $danger;
+    color: $danger;
+  }
+
+  &.win {
+    border-left-color: #2d7a2d;
+    color: #2d7a2d;
+  }
+}
+
+// ── History ───────────────────────────────────────────────
+.history {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  p {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85rem;
+  }
+
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    min-height: 1.5rem;
+  }
+
+  .chip {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: $text;
+    background: $bg;
+    border: 1px solid $border;
+    border-radius: 6px;
+    padding: 0.25rem 0.55rem;
+    line-height: 1;
+  }
+}
