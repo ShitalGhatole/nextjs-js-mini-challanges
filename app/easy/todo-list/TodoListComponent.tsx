@@ -41,7 +41,7 @@ const TodoListComponent = () => {
     <main className={styles.container}>
       <div className={styles.card}>
         <div className={styles.header}>
-          <h1>Todo List <img src="/react-logo.svg" alt="JS Icon" height={24} width={24} /></h1>
+          <h1>Todo List <img src="/react-logo.svg" alt="JS Icon" height={24} width={24} title="Made in React" /></h1>
           <p>Add tasks and keep track of your to-do list!</p>
         </div>
 
