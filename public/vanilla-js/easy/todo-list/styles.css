@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;700;800&display=swap');
+
+/* ── Reset ───────────────────────── */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f6f6f3;
+  font-family: 'Syne', sans-serif;
+  color: #1a1a1a;
+}
+
+/* ── Layout ─────────────────────── */
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.card {
+  width: 100%;
+  max-width: 520px;
+  background: #ffffff;
+  border: 1px solid #e5e5dd;
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ── Header ─────────────────────────── */
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.header h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  letter-spacing: -0.03em;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header p {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.92rem;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+/* ── Input ─────────────────────── */
+
+.input-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.input-group input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e0e0d8;
+  border-radius: 10px;
+  background: #f6f6f3;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.input-group input:focus {
+  border-color: #1a1a2e;
+  box-shadow: 0 0 0 3px rgba(26, 26, 46, 0.08);
+}
+
+.input-group button {
+  padding: 0.75rem 1.2rem;
+  border: none;
+  border-radius: 10px;
+  background: #1a1a2e;
+  color: #fff;
+  font-family: 'Syne', sans-serif;
+  cursor: pointer;
+}
+
+.input-group button:hover {
+  opacity: 0.9;
+}
+
+/* ── Task List ─────────────────── */
+
+.tasks-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+/* ── Task Item ─────────────────── */
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 15px;
+
+  padding: 0.9rem 1rem;
+  border: 1px solid #e5e5dd;
+  border-radius: 12px;
+  background: #fafaf8;
+
+  transition: border-color 0.15s ease, transform 0.1s ease;
+}
+
+.task:hover {
+  border-color: #d0d0c8;
+  transform: translateY(-1px);
+}
+
+/* ── Task Content ──────────────── */
+
+.task-content p {
+  margin: 0;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.9rem;
+  color: #1a1a1a;
+  word-break: break-word;
+}
+
+/* ── Task Actions ─────────────── */
+
+.task-actions {
+  display: flex;
+  gap: 0.4rem;
+}
+
+/* ── Buttons ─────────────────── */
+
+.task-actions button {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.75rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+/* Edit */
+
+.edit-task-button {
+  background: transparent;
+  border: 1px solid #dcdcd4;
+  color: #444;
+}
+
+.edit-task-button:hover {
+  border-color: #1a1a1a;
+  color: #1a1a1a;
+}
+
+/* Delete */
+
+.delete-task-button {
+  background: transparent;
+  border: 1px solid #f0c2c2;
+  color: #d63030;
+}
+
+.delete-task-button:hover {
+  background: #d63030;
+  color: #fff;
+  border-color: #d63030;
+}
+
+/* ── Optional: Completed Task ───── */
+
+.task.completed p {
+  text-decoration: line-through;
+  opacity: 0.5;
+}

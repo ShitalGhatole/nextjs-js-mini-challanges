@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guess The Number - HTML/CSS/JS</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="header">
+        <h1>Number Guesser <img src="/JavaScript_logo.png" alt="JS Icon" height="24" width="24"></h1>
+        <p>Pick a number between 1 and 100!</p>
+      </div>
+
+      <div class="inputGroup">
+        <label htmlFor="guess">Enter your guess:</label>
+        <input id="guess" name="guess" type="number" min="1" max="100" placeholder='-' class="inputNumber" />
+      </div>
+
+      <div class="actions">
+        <button class="primaryBtn">Submit Guess</button>
+
+        <button class="resetBtn">Reset Game</button>
+      </div>
+
+      <p class="feedback">Start Guessing!</p>
+
+      <div class="history">
+        <p>Previous guesses</p>
+        <div class="chips"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
