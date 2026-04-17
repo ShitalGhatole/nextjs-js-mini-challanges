@@ -1,66 +1,25 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import PuzzleCard from "./components/PuzzleCard/PuzzleCard";
+import styles from "./page.module.scss";
 
 export default function Home() {
   return (
     <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      <div className={styles.ReactPuzzles}>
+        <h2 className={styles.title}>React Puzzles</h2>
+        <ul className={styles.puzzleList}>
+          <PuzzleCard link={{href: "/easy/todo-list"}} title="Todo List" type="react" difficulty="Easy" />
+          <PuzzleCard link={{href: "/easy/guess-the-number"}} title="Guess the Number" type="react" difficulty="Easy" />
+        </ul>
+      </div>
+
+      <div className={styles.ReactPuzzles}>
+        <h2 className={styles.title}>HTML/CSS/JS Versions</h2>
+        <ul className={styles.puzzleList}>
+          <PuzzleCard link={{href: "/vanilla-js/easy/todo-list/index.html"}} title="Todo List" type="javascript" difficulty="Easy" />
+          <PuzzleCard link={{href: "/vanilla-js/easy/guess-the-number/index.html"}} title="Guess the Number" type="javascript" difficulty="Easy" />
+        </ul>
+      </div>
+
     </div>
   );
 }

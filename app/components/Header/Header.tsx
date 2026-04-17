@@ -1,8 +1,11 @@
+import Link from 'next/link';
 import styles from './Header.module.scss'
 const Header = ({title}: {title?: string}) => {
   return (
     <div className={styles.header}>
-      <h1>{title || "Problem Solving"}</h1>
+      <h1>
+        <Link href="/">Mini Puzzles</Link>
+      </h1>
     </div>
   )
 }
