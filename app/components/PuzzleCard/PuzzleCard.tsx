@@ -6,7 +6,7 @@ const PuzzleCard = (
   {link, title, type, difficulty}: {link: {href: string}, title: string, type: string, difficulty: string}
 ) => {
   return (
-    <Link href={link.href} target="_blank" rel="noopener noreferrer">
+    <Link href={link.href} target="_blank">
       <div className={styles.puzzleCard}>
 
       <div className={styles.headerWrapper}>
@@ -17,7 +17,7 @@ const PuzzleCard = (
       <img src={type === 'react' ? '/react-logo.svg' : '/JavaScript_logo.png'} 
         className={styles.icon}
         width={40} 
-        height={40} 
+        height={40}
         alt={`${type === 'react' ? 'React' : 'JavaScript'} Icon`}
         title={`Made in ${type === 'react' ? 'React' : 'Vanilla HTML/CSS/JS'}`}
         />

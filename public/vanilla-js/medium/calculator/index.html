@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Calculator - HTML/CSS/JS</title>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="header">
+        <h1>Basic Calculator<img src="/JavaScript_logo.png" alt="JS Icon" height="24" width="24" title="Made in Vanilla HTML/CSS/JS"></h1>
+        <p>Perform basic arithmetic operations!</p>
+      </div>
+
+      <div class="displayArea">
+        <p class="calculationDisplay"></p>
+        <input type="text" inputmode="decimal" id="inputElement" />
+      </div>
+
+      <div class="calculatorButtons">
+        <button data-value="1" class="numberButton">1</button>
+        <button data-value="2" class="numberButton">2</button>
+        <button data-value="3" class="numberButton">3</button>
+        <button data-value="4" class="numberButton">4</button>
+        <button data-value="5" class="numberButton">5</button>
+        <button data-value="6" class="numberButton">6</button>
+        <button data-value="7" class="numberButton">7</button>
+        <button data-value="8" class="numberButton">8</button>
+        <button data-value="9" class="numberButton">9</button>
+        <button data-value="0" class="numberButton">O</button>
+        <button data-value="." class="numberButton">.</button>
+        
+        <button data-value="+" class="operatorButton">+</button>
+        <button data-value="-" class="operatorButton">-</button>
+        <button data-value="*" class="operatorButton">x</button>
+        <button data-value="/" class="operatorButton">/</button>
+        <button data-value="=" class="operatorButton">=</button>
+
+        <button data-value="ac" class="specialButton">AC</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>  
+</body>
+</html>
