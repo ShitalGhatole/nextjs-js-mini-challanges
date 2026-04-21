@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;700;800&display=swap');
+
+// ── Tokens ─────────────────────────
+$bg: #f6f6f3;
+$surface: #ffffff;
+$border: #e5e5dd;
+$text: #1a1a1a;
+$muted: #9a9a90;
+$accent: #1a1a2e;
+$danger: #d63030;
+
+// ── Layout ─────────────────────────
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $bg;
+  font-family: 'Syne', sans-serif;
+  padding: 2rem;
+}
+
+.card {
+  width: 100%;
+  max-width: 620px;
+  background: $surface;
+  border: 1px solid $border;
+  border-radius: 16px;
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+// ── Header ───────────────────────
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  p {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.92rem;
+    margin: 0;
+    letter-spacing: 0.02em;
+  }
+}
+
+// ── Display ────────────────────────
+.displayArea {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.calculationDisplay {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.8rem;
+  color: $muted;
+  min-height: 1rem;
+}
+
+.input {
+  width: 100%;
+  border: 1px solid $border;
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  background: $bg;
+  font-family: 'DM Mono', monospace;
+  font-size: 1.4rem;
+  outline: none;
+
+  &:focus {
+    border-color: $accent;
+    box-shadow: 0 0 0 3px rgba(26, 26, 46, 0.08);
+  }
+}
+
+// ── Buttons Grid ───────────────────
+.calculatorButtons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+// ── Base Button ────────────────────
+.calculatorButtons button {
+  padding: 0.75rem;
+  border-radius: 10px;
+  font-family: 'Syne', sans-serif;
+  font-size: 25px;
+  cursor: pointer;
+  border: 1px solid $border;
+  background: $bg;
+  transition: all 0.15s ease;
+
+  &:hover {
+    border-color: $accent;
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// ── Number Buttons ─────────────────
+.numberButton {
+  background: $bg;
+  color: $text;
+}
+
+// ── Operator Buttons ───────────────
+.operatorButton {
+  background: $accent;
+  border: none;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+// ── Special Buttons ────────────────
+.specialButton {
+  background: transparent;
+  border: 1px solid $border;
+  color: $muted;
+
+  &:hover {
+    color: $text;
+    border-color: $text;
+  }
+}
+
+// ── Danger (AC button override) ────
+.specialButton:last-child {
+  border-color: #f0c2c2;
+  color: $danger;
+
+  &:hover {
+    background: $danger;
+    color: #fff;
+    border-color: $danger;
+  }
+}
