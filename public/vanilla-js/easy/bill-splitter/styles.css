@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;700;800&display=swap');
+
+/* ── Base ───────────────────────── */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f6f6f3;
+  font-family: 'Syne', sans-serif;
+  color: #1a1a1a;
+}
+
+/* ── Layout ─────────────────────── */
+
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  flex-wrap: wrap;
+}
+
+/* ── Cards ─────────────────────── */
+
+.billInput,
+.billDisplay {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  border: 1px solid #e5e5dd;
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ── Header ────────────────────── */
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.header h1 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header p {
+  margin: 0;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* ── Inputs ────────────────────── */
+
+label,
+.inputTip p {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.8rem;
+  color: #8a8a80;
+  margin-bottom: 0.25rem;
+}
+
+.inputBill,
+.inputPeople,
+.inputTip {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+input[type='number'] {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border-radius: 10px;
+  border: 1px solid #e0e0d8;
+  background: #f6f6f3;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.15s ease;
+}
+
+input[type='number']:focus {
+  border-color: #1a1a2e;
+  box-shadow: 0 0 0 3px rgba(26, 26, 46, 0.08);
+}
+
+/* Remove number arrows */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+/* ── Tip Buttons ───────────────── */
+
+.tipBtnContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.tipBtnGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tipBtn {
+  flex: 1;
+  min-width: 60px;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #e0e0d8;
+  background: #fafaf8;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.tipBtn:hover {
+  border-color: #1a1a1a;
+}
+
+.tipBtn.active {
+  background: #1a1a2e;
+  color: #fff;
+  border-color: #1a1a2e;
+}
+
+/* ── Buttons ───────────────────── */
+
+.calculateBtnContainer,
+.resetBtnContainer {
+  display: flex;
+}
+
+.calculateBtn {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 10px;
+  background: #1a1a2e;
+  color: #fff;
+  font-family: 'Syne', sans-serif;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.calculateBtn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* Hover (only when enabled) */
+.calculateBtn:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* Active state (your JS adds this class) */
+.calculateBtn.active {
+  background: #1a1a2e;
+  opacity: 1;
+}
+
+/* Disabled state */
+.calculateBtn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Optional: subtle visual difference when inactive */
+.calculateBtn:not(.active) {
+  background: #bdbdb5;
+}
+
+.resetBtn {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: 1px solid #e0e0d8;
+  background: transparent;
+  font-family: 'Syne', sans-serif;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.resetBtn:hover {
+  border-color: #1a1a1a;
+  color: #1a1a1a;
+}
+
+/* ── Output Section ────────────── */
+
+.tipAmount,
+.totalAmount,
+.billPerPerson {
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  background: #f6f6f3;
+  border: 1px solid #e5e5dd;
+}
+
+.billDisplay p {
+  margin: 0;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.9rem;
+}
+
+.billDisplay span {
+  float: right;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+}
