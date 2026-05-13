@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;700;800&display=swap');
+
+/* ── Base ───────────────────────────── */
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f4f0;
+  font-family: 'Syne', sans-serif;
+  padding: 2rem;
+}
+
+/* ── Card ───────────────────────────── */
+
+.card {
+  width: 100%;
+  max-width: 700px;
+  background: #ffffff;
+  border: 1px solid #e0e0d8;
+  border-radius: 16px;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ── Header ─────────────────────────── */
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.header h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  letter-spacing: -0.03em;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header p {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.92rem;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+/* ── Rows ─────────────────────── */
+
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 1rem;
+  border: 1px solid #e5e5dd;
+  border-radius: 12px;
+  background: #fafaf8;
+  transition: border-color 0.15s ease,
+  transform 0.1s ease;
+}
+
+.row:hover {
+  border-color: #d0d0c8;
+  transform: translateY(-1px);
+}
+
+/* ── Labels ───────────────────── */
+
+.row p {
+  margin: 0;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.8rem;
+  color: #8a8a80;
+  letter-spacing: 0.02em;
+}
+
+/* ── Original Input Row ───────────────── */
+
+.row:has(input) {
+  background: #f7f7f2;
+  border: 1px solid #cfcfc5;
+}
+
+.row:has(input) p {
+  color: #5f5f55;
+}
+
+.row:has(input):hover {
+  border-color: #1a1a2e;
+  transform: translateY(0);
+}
+
+/* Input specific styling */
+
+.row input {
+  background: #ffffff;
+  border: 1px solid #d6d6cd;
+
+  font-size: 1rem;
+  font-weight: 500;
+
+  padding: 1rem 1rem;
+}
+
+/* subtle editable feel */
+
+.row input:focus {
+  background: #fff;
+  border-color: #1a1a2e;
+  box-shadow: 0 0 0 4px rgba(26, 26, 46, 0.08);
+}
+
+/* ── Responsive ───────────────── */
+
+@media (max-width: 640px) {
+  .card {
+    padding: 1.25rem;
+  }
+
+  .header h1 {
+    font-size: 1.6rem;
+  }
+
+  .row {
+    padding: 0.85rem;
+  }
+}
