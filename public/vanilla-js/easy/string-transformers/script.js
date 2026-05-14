@@ -11,16 +11,18 @@ originalString.focus();
 
 // Function to convert a string to camelCase
 function transformToCamelcase(str) {
+  if (!str.trim()) return '';
   const words = str.trim().split(/\s+/);
   const firstWord = words[0].toLowerCase();
-  const restOfTheWords = words.slice(1).map(word => (
+  const restWords = words.slice(1).map(word => (
     word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
   ))
-  return firstWord + restOfTheWords.join('');
+  return firstWord + restWords.join('');
 }
 
 // Function to convert a string to PascalCase
 function transformToPascalcase(str) {
+  if (!str.trim()) return '';
   const words = str.trim().split(/\s+/);
   const pascalcaseWords = words.map(word => (
     word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
@@ -29,11 +31,13 @@ function transformToPascalcase(str) {
 }
 
 originalString.addEventListener('input', function() {
-  lowercaseString.textContent = originalString.value.toLowerCase();
-  uppercaseString.textContent = originalString.value.toUpperCase();
-  camelcaseString.textContent = transformToCamelcase(originalString.value);
-  snakecaseString.textContent = originalString.value.toLowerCase().trim().split(/\s+/).join('_');
-  pascalcaseString.textContent = transformToPascalcase(originalString.value)
-  kebabcaseString.textContent = originalString.value.toLowerCase().trim().split(/\s+/).join('-');
-  trimmedString.textContent = originalString.value.toLowerCase().trim().split(/\s+/).join('');
+  const value = originalString.value;
+  const words = value.trim().split(/\s+/);
+  lowercaseString.textContent = value.toLowerCase();
+  uppercaseString.textContent = value.toUpperCase();
+  snakecaseString.textContent = words.join('_').toLowerCase();
+  kebabcaseString.textContent = words.join('-').toLowerCase();
+  trimmedString.textContent = words.join('').toLowerCase();
+  camelcaseString.textContent = transformToCamelcase(value);
+  pascalcaseString.textContent = transformToPascalcase(value)
 })
