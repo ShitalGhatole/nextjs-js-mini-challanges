@@ -6,21 +6,21 @@ const StringTransformer = () => {
 
   // Helper function to convert a string to camelCase
   function camel(str: string) {
-    const words = str.split(" ");
+    const words = str.trim().split(/\s+/);
     const firstWord = words[0].toLowerCase();
     const restOfTheWords = words.slice(1).map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase());
     return firstWord + restOfTheWords.join('');
   }
 
-  const inputRef = useRef(null)
+  const inputRef = useRef<HTMLInputElement>(null)
   const [originalText, setOriginalText] = useState('This is the string to transform')
   const lowercaseText = originalText.toLowerCase()
   const uppercaseText = originalText.toUpperCase();
   const camelCaseText = camel(originalText);
-  const snakeCaseText = originalText.toLowerCase().split(" ").join("_");
-  const pascalCaseText = originalText.toLowerCase().split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join('');
-  const kebabCaseText = originalText.toLowerCase().split(" ").join("-");
-  const trimCaseText = originalText.toLowerCase().split(" ").join("");
+  const snakeCaseText = originalText.toLowerCase().trim().split(/\s+/).join("_");
+  const pascalCaseText = originalText.toLowerCase().trim().split(/\s+/).map(word => word.charAt(0).toUpperCase() + word.slice(1)).join('');
+  const kebabCaseText = originalText.toLowerCase().trim().split(/\s+/).join("-");
+  const trimCaseText = originalText.toLowerCase().trim().split(/\s+/).join("");
 
 
   useEffect(() => {
