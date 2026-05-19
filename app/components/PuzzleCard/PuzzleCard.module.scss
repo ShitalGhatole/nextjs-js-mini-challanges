@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;700;800&display=swap');
 
 .puzzleCard {
-  background-color: beige;
+  background-color: #e5d8f1;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -21,10 +21,22 @@
   }
 }
 
-.difficulty {
-  //green color and pill shape
+.easy {
   background-color: #d4edda;
   color: #155724;
+}
+
+.medium {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.hard {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.difficulty {
   padding: 5px 10px;
   border-radius: 20px;
   font-size: 12px;

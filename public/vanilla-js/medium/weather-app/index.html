@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Document</title>
+</head>
+<body>
+
+  <main class="container">
+    <div class="card">
+      <div class="header">
+        <h1>Weather App <img src="/JavaScript_logo.png" alt="JS Icon" height="24" width="24" title="Made in Vanilla HTML/CSS/JS"></h1>
+        <p>Check the weather in your city!</p>
+      </div>
+
+      <div class="wrapper">
+        <div>
+          <div>
+            <label for="cityInput">
+              City
+              <input list="cityNameOptions" id="cityInput" name="cityName" type="text" placeholder="Enter City Name" />
+            </label>
+            <datalist id="cityNameOptions">
+              
+            </datalist> 
+          </div>
+
+          <!-- <button id="searchBtn">Search</button> -->
+        </div>
+
+        <!-- first container -->
+        <div>
+          <div>
+            <div>
+              <h2>Madrid</h2>
+              <p>Chance of rain: 0%</p>
+            </div>
+
+            <div>
+              <h2>31 deg</h2>
+            </div>
+          </div>
+          
+          <div class="weatherMainImg">
+            <img width="100" height="100" />
+          </div>
+        </div>
+        
+        <!-- Second container  -->
+        <div class="weatherForecast">
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body> 
+</html>

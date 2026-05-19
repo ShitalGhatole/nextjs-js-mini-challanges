@@ -9,17 +9,17 @@ const PuzzleCard = (
     <Link href={link.href} target="_blank">
       <div className={styles.puzzleCard}>
 
-      <div className={styles.headerWrapper}>
-        {title}
-        <p className={styles.difficulty}>{difficulty}</p>
-      </div>
+        <div className={styles.headerWrapper}>
+          {title}
+          <p className={`${styles.difficulty} ${styles[difficulty.toLowerCase()]}`}>{difficulty}</p>
+        </div>
 
-      <img src={type === 'react' ? '/react-logo.svg' : '/JavaScript_logo.png'} 
-        className={styles.icon}
-        width={40} 
-        height={40}
-        alt={`${type === 'react' ? 'React' : 'JavaScript'} Icon`}
-        title={`Made in ${type === 'react' ? 'React' : 'Vanilla HTML/CSS/JS'}`}
+        <img src={type === 'react' ? '/react-logo.svg' : '/JavaScript_logo.png'} 
+          className={styles.icon}
+          width={40} 
+          height={40}
+          alt={`${type === 'react' ? 'React' : 'JavaScript'} Icon`}
+          title={`Made in ${type === 'react' ? 'React' : 'Vanilla HTML/CSS/JS'}`}
         />
       </div>
     </Link>
