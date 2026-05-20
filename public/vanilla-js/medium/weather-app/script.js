@@ -29,7 +29,7 @@ async function getCityName(city) {
 }
 
 async function getCityWeather(city, state, country) {
-  const weather = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${state},${country}&appid=9b3f0a8184e519119045c8c631f8769e`);
+  const weather = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${state},${country}&appid=apikey`);
   const weatherData = await weather.json();
   return weatherData;
 }
