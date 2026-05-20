@@ -1,10 +1,17 @@
 let cityInput = document.getElementById("cityInput");
 let searchBtn = document.getElementById("searchBtn");
 let cityNameOptionsWrapper = document.getElementById("cityNameOptions");
+let headingCityName = document.querySelector(".headingCityName");
+let headingDegree = document.querySelector(".headingDegree");
+let description = document.querySelector(".description");
 
 const apiKey = "apikey";
 // example API
 // https://api.openweathermap.org/data/2.5/weather?lat=37.1283343&lon=-84.0835576&appid=apikey
+
+const capitalizeWord = (string) => {
+  return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+}
 
 async function getCityName(city) {
   let cityName = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${apiKey}`);
@@ -29,36 +36,37 @@ async function getCityName(city) {
 }
 
 async function getCityWeather(city, state, country) {
-  const weather = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${state},${country}&appid=apikey`);
+  const weather = await fetch(`
+    https://api.openweathermap.org/data/2.5/weather?q=${city},${state},${country}&units=metric&appid=${apiKey}
+  `);
   const weatherData = await weather.json();
   return weatherData;
 }
 
 cityInput.addEventListener("input", async function () {
-  let city = cityInput.value;
-  // stop API call if user already selected a full city
-  if (city.includes(",")) {
-    return;
-  }
-  let cityName = await getCityName(city);
+  const city = cityInput.value;
+  if (city === '') return
 
+  const cityName = await getCityName(city);
   cityNameOptionsWrapper.innerHTML = "";
-  
   cityName.forEach(city => {
     cityNameOptionsWrapper.innerHTML += `
-      <option value="${city.name}, ${city.state}, ${city.country}," />
+      <option value="${city.name}, ${city.state}, ${city.country}" />
     `
   })
 })
 
 cityInput.addEventListener("change", async function () {
-  let selectedCity = cityInput.value;
-  
-  let city = selectedCity.split(",")[0].trim();
-  let state = selectedCity.split(",")[1].trim();
-  let country = selectedCity.split(",")[2].trim();
-
-  const cityWeather = await getCityWeather(city, state, country)
-
-  console.log("Weather: ", cityWeather)
+  const city = cityInput.value;
+  const cityArr = city.split(",");
+  const [cityName, stateName, countryName] = cityArr;
+  const cityWeather = await getCityWeather(cityName, stateName, countryName);
+  const finalWeather = {
+    temp: cityWeather.main.temp,
+    description: capitalizeWord(cityWeather.weather[0].description),
+  }
+  console.log(cityWeather)
+  headingCityName.textContent = `${cityName}, ${countryName}`
+  headingDegree.textContent = `${finalWeather.temp} deg`
+  description.textContent = `${finalWeather.description}`
 })
