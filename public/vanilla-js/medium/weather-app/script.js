@@ -2,9 +2,9 @@ let cityInput = document.getElementById("cityInput");
 let searchBtn = document.getElementById("searchBtn");
 let cityNameOptionsWrapper = document.getElementById("cityNameOptions");
 
-const apiKey = "apiKey";
+const apiKey = "apikey";
 // example API
-// https://api.openweathermap.org/data/2.5/weather?lat=37.1283343&lon=-84.0835576&appid=9b3f0a8184e519119045c8c631f8769e
+// https://api.openweathermap.org/data/2.5/weather?lat=37.1283343&lon=-84.0835576&appid=apikey
 
 async function getCityName(city) {
   let cityName = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${apiKey}`);
