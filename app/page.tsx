@@ -32,9 +32,9 @@ export default function Home() {
           
           {/* Medium - JS  */}
           <PuzzleCard link={{href: "/vanilla-js/medium/calculator/index.html"}} title="Calculator" type="javascript" difficulty="Medium" />
-          <PuzzleCard link={{href: "/vanilla-js/medium/weather-app/index.html"}} title="Weather App" type="javascript" difficulty="Medium" />
 
           {/* Hard - JS  */}
+          <PuzzleCard link={{href: "/vanilla-js/hard/weather-app/index.html"}} title="Weather App" type="javascript" difficulty="hard" />
           {/* <PuzzleCard />  */}
         </ul>
       </div>
