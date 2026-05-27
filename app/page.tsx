@@ -17,6 +17,7 @@ export default function Home() {
           <PuzzleCard link={{href: "/medium/calculator"}} title="Calculator" type="react" difficulty="Medium" />
 
           {/* Hard - React  */}
+          <PuzzleCard link={{href: "/hard/weather-app"}} title="Weather App" type="javascript" difficulty="hard" />
           {/* <PuzzleCard />  */}
         </ul>
       </div>
