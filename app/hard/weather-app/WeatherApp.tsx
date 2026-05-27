@@ -2,12 +2,21 @@
 import { useEffect, useState } from 'react';
 import styles from './WeatherApp.module.scss'
 
+type WeatherData = {
+  main?: {
+    temp?: number;
+    feels_like?: number;
+    temp_min?: number;
+    temp_max?: number;
+    humidity?: number;
+  };
+};
 
 const WeatherApp = () => {
   
   const [cityName, setCityName] = useState('');
   const [cityNameOptions, setCityNameOptions] = useState([]);
-  const [cityWeather, setCityWeather] = useState({});
+  const [cityWeather, setCityWeather] = useState<WeatherData>({});
   const [debouncedCityName, setDebouncedCityName] = useState('');
   const [isWeatherLoading, setIsWeatherLoading] = useState(false);
   const [selectedCityName, setSelectedCityName] = useState('');
