@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Document</title>
+</head>
+<body>
+  <main class="container">
+    <div class="card">
+      <div class="header">
+        <h1>Password strength checker <img src="/JavaScript_logo.png" alt="JS Icon" height="24" width="24" title="Made in Vanilla HTML/CSS/JS"></h1>
+        <p>Check the strength of the password</p>
+      </div>
+
+      <div class="wrapper">
+        <form>
+          <input type="text" name="username" autocomplete="username" style="display:none;" aria-hidden="true" />
+          <input type="password" id="passwordInput" placeholder="Enter your password" autocomplete="new-password" />
+        </form>
+        
+        <!-- want to change the color of the text into green if it fulfils it -->
+        <ul>
+          <li>Lowercase</li>
+          <li>Uppercase</li>
+          <li>Number</li>
+          <li>Symbols</li>
+        </ul>
+
+        <div class="strengthMeter">
+          <div class="strengthMeterFill" id="strengthMeterFill"></div>
+        </div>
+
+        <div>
+          <p>Your password contains <span class="noOfCharacters">0</span> characters</p>
+          <p>Your Password is <span><b class="qualityOfPassword">weak</b></span></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
