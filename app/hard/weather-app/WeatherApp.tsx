@@ -71,14 +71,14 @@ const WeatherApp = () => {
     if (debouncedCityName.includes(',')) {
       return;
     }
-  
-    let isCurrentRequest = true; 
+
+    let isCurrentRequest = true;
 
     getCityNames(debouncedCityName).then((cities) => {
-      if (isCurrentRequest) { 
+      if (isCurrentRequest) {
         setCityNameOptions(cities);
       }
-      })
+    })
       .catch((error) => {
         if (isCurrentRequest) {
           console.error("Error fetching city names:", error);
@@ -87,8 +87,8 @@ const WeatherApp = () => {
 
 
     return () => {
-    isCurrentRequest = false;
-  };
+      isCurrentRequest = false;
+    };
 
   }, [debouncedCityName])
 
@@ -137,7 +137,7 @@ const WeatherApp = () => {
 
               {visibleOptions.length > 0 && (
                 <div className={styles.cityOptions} id="cityOptions">
-                  {visibleOptions.map((city: any, index) => (
+                  {visibleOptions.map((city: any) => (
                     <div key={city.id} className={styles.cityOption} onClick={() => handleCitySelect(city)}>
                       <p>{city.name}{city.state ? `, ${city.state}` : ''},{city.country}</p>
                     </div>

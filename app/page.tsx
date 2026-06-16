@@ -6,38 +6,70 @@ export default function Home() {
     <div className={styles.page}>
       <div className={styles.ReactPuzzles}>
         <h2 className={styles.title}>React Puzzles</h2>
-        <ul className={styles.puzzleList}>
+        <div className={styles.puzzleList}>
           {/* Easy - React  */}
-          <PuzzleCard link={{href: "/easy/todo-list"}} title="Todo List" type="react" difficulty="Easy" />
-          <PuzzleCard link={{href: "/easy/guess-the-number"}} title="Guess the Number" type="react" difficulty="Easy" />
-          <PuzzleCard link={{href: "/easy/bill-splitter"}} title="Bill Splitter" type="react" difficulty="Easy" />
-          <PuzzleCard link={{href: "/easy/string-transformers"}} title="String Transformers" type="react" difficulty="Easy" />
+          <div className={styles.puzzleContainer}>
+            <h3 className={styles.puzzleTypeHeading}>Easy</h3>
+
+            <div className={styles.puzzleList}>
+              <PuzzleCard link={{href: "/easy/todo-list"}} title="Todo List" type="react" difficulty="Easy" />
+              <PuzzleCard link={{href: "/easy/guess-the-number"}} title="Guess the Number" type="react" difficulty="Easy" />
+              <PuzzleCard link={{href: "/easy/bill-splitter"}} title="Bill Splitter" type="react" difficulty="Easy" />
+              <PuzzleCard link={{href: "/easy/string-transformers"}} title="String Transformers" type="react" difficulty="Easy" />
+            </div>
+          </div>
 
           {/* Medium - React  */}
-          <PuzzleCard link={{href: "/medium/calculator"}} title="Calculator" type="react" difficulty="Medium" />
+          <div className={styles.puzzleContainer}>
+            <h3 className={styles.puzzleTypeHeading}>Medium</h3>
+            <div className={styles.puzzleList}>
+              <PuzzleCard link={{href: "/medium/calculator"}} title="Calculator" type="react" difficulty="Medium" />
+            </div>
+          </div>
 
           {/* Hard - React  */}
-          <PuzzleCard link={{href: "/hard/weather-app"}} title="Weather App" type="javascript" difficulty="hard" />
+          <div className={styles.puzzleContainer}>
+            <h3 className={styles.puzzleTypeHeading}>Hard</h3>
+            <div className={styles.puzzleList}>
+              <PuzzleCard link={{href: "/hard/weather-app"}} title="Weather App" type="javascript" difficulty="hard" />
+            </div>
+          </div>
           {/* <PuzzleCard />  */}
-        </ul>
+        </div>
       </div>
 
       <div className={styles.ReactPuzzles}>
         <h2 className={styles.title}>HTML/CSS/JS Versions</h2>
-        <ul className={styles.puzzleList}>
+        <div className={styles.puzzleList}>
           {/* Easy - JS  */}
-          <PuzzleCard link={{href: "/vanilla-js/easy/todo-list/index.html"}} title="Todo List" type="javascript" difficulty="Easy" />
-          <PuzzleCard link={{href: "/vanilla-js/easy/guess-the-number/index.html"}} title="Guess the Number" type="javascript" difficulty="Easy" />
-          <PuzzleCard link={{href: "/vanilla-js/easy/bill-splitter/index.html"}} title="Bill Splitter" type="javascript" difficulty="Easy" />
-          <PuzzleCard link={{href: "/vanilla-js/easy/string-transformers/index.html"}} title="String Transformers" type="javascript" difficulty="Easy" />
+          <div className={styles.puzzleContainer}>
+            <h3 className={styles.puzzleTypeHeading}>Easy</h3>
+            <div className={styles.puzzleList}>
+              <PuzzleCard link={{href: "/vanilla-js/easy/todo-list/index.html"}} title="Todo List" type="javascript" difficulty="Easy" />
+              <PuzzleCard link={{href: "/vanilla-js/easy/guess-the-number/index.html"}} title="Guess the Number" type="javascript" difficulty="Easy" />
+              <PuzzleCard link={{href: "/vanilla-js/easy/bill-splitter/index.html"}} title="Bill Splitter" type="javascript" difficulty="Easy" />
+              <PuzzleCard link={{href: "/vanilla-js/easy/string-transformers/index.html"}} title="String Transformers" type="javascript" difficulty="Easy" />
+            </div>
+          </div>
           
           {/* Medium - JS  */}
-          <PuzzleCard link={{href: "/vanilla-js/medium/calculator/index.html"}} title="Calculator" type="javascript" difficulty="Medium" />
+          <div className={styles.puzzleContainer}>
+            <h3 className={styles.puzzleTypeHeading}>Medium</h3>
+            <div className={styles.puzzleList}>
+              <PuzzleCard link={{href: "/vanilla-js/medium/calculator/index.html"}} title="Calculator" type="javascript" difficulty="Medium" />
+              <PuzzleCard link={{href: "/vanilla-js/medium/password-strength/index.html"}} title="Password Strength Checker" type="javascript" difficulty="Medium" />
+            </div>
+          </div>
 
           {/* Hard - JS  */}
-          <PuzzleCard link={{href: "/vanilla-js/hard/weather-app/index.html"}} title="Weather App" type="javascript" difficulty="hard" />
+          <div className={styles.puzzleContainer}>
+            <h3 className={styles.puzzleTypeHeading}>Hard</h3>
+            <div className={styles.puzzleList}>
+              <PuzzleCard link={{href: "/vanilla-js/hard/weather-app/index.html"}} title="Weather App" type="javascript" difficulty="hard" />
+            </div>
+          </div>
           {/* <PuzzleCard />  */}
-        </ul>
+        </div>
       </div>
     </div>
   );
