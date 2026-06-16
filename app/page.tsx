@@ -24,6 +24,7 @@ export default function Home() {
             <h3 className={styles.puzzleTypeHeading}>Medium</h3>
             <div className={styles.puzzleList}>
               <PuzzleCard link={{href: "/medium/calculator"}} title="Calculator" type="react" difficulty="Medium" />
+              <PuzzleCard link={{href: "/medium/password-strength-checker"}} title="Password Strength Checker" type="react" difficulty="Medium" />
             </div>
           </div>
 
