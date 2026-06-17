@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Kanban Board</title>
+</head>
+<body>
+
+  <main class="container">
+    <div class="card">
+
+      <div class="header">
+        <h1>
+          Kanban Board
+          <img
+            src="/JavaScript_logo.png"
+            alt="JS Icon"
+            height="24"
+            width="24"
+          />
+        </h1>
+
+        <p>Manage your tasks</p>
+      </div>
+
+      <div class="taskForm">
+        <input
+          type="text"
+          id="taskInput"
+          placeholder="Enter task name"
+        />
+
+        <button id="addTaskBtn">
+          Add Task
+        </button>
+      </div>
+
+      <div class="board">
+
+        <div
+          class="column"
+          ondragover="handleDragOver(event)"
+          ondragleave="handleDragLeave(event)"
+          ondrop="handleDrop('todo', event)"
+        >
+          <h2>Todo</h2>
+          <div id="todoTasks"></div>
+        </div>
+
+        <div
+          class="column"
+          ondragover="handleDragOver(event)"
+          ondragleave="handleDragLeave(event)"
+          ondrop="handleDrop('progress', event)"
+        >
+          <h2>In Progress</h2>
+          <div id="progressTasks"></div>
+        </div>
+
+        <div
+          class="column"
+          ondragover="handleDragOver(event)"
+          ondragleave="handleDragLeave(event)"
+          ondrop="handleDrop('done', event)"
+        >
+          <h2>Done</h2>
+          <div id="doneTasks"></div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

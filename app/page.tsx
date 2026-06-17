@@ -25,6 +25,7 @@ export default function Home() {
             <div className={styles.puzzleList}>
               <PuzzleCard link={{href: "/medium/calculator"}} title="Calculator" type="react" difficulty="Medium" />
               <PuzzleCard link={{href: "/medium/password-strength-checker"}} title="Password Strength Checker" type="react" difficulty="Medium" />
+              <PuzzleCard link={{href: "/medium/infinite-scroll"}} title="Infinite Scroll" type="react" difficulty="Medium" />
             </div>
           </div>
 
@@ -67,6 +68,7 @@ export default function Home() {
             <h3 className={styles.puzzleTypeHeading}>Hard</h3>
             <div className={styles.puzzleList}>
               <PuzzleCard link={{href: "/vanilla-js/hard/weather-app/index.html"}} title="Weather App" type="javascript" difficulty="hard" />
+              <PuzzleCard link={{href: "/vanilla-js/hard/kanban-board/index.html"}} title="Kanban Board" type="javascript" difficulty="hard" />
             </div>
           </div>
           {/* <PuzzleCard />  */}
