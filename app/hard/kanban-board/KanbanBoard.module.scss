@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;700;800&display=swap');
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+
+  font-family: 'Syne', sans-serif;
+}
+
+.card {
+  width: 100%;
+  max-width: 1200px;
+
+  background: #ffffff;
+  border: 1px solid #e0e0d8;
+  border-radius: 18px;
+
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+
+  h1 {
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+  }
+
+  p {
+    margin: 0;
+
+    font-family: 'DM Mono', monospace;
+    color: #7b7b72;
+  }
+}
+
+.taskForm {
+  display: flex;
+  gap: 1rem;
+
+  input {
+    flex: 1;
+
+    padding: 1rem;
+
+    border-radius: 12px;
+    border: 1px solid #d8d8d0;
+
+    background: #f8f8f5;
+
+    font-family: 'DM Mono', monospace;
+    font-size: 1rem;
+
+    outline: none;
+
+    transition: all 0.15s ease;
+
+    &::placeholder {
+      color: #9b9b92;
+    }
+
+    &:focus {
+      background: #ffffff;
+      border-color: #1a1a2e;
+      box-shadow: 0 0 0 4px rgba(26, 26, 46, 0.08);
+    }
+  }
+
+  button {
+    padding: 1rem 1.5rem;
+
+    border: none;
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    background: #1a1a2e;
+    color: white;
+
+    font-family: 'DM Mono', monospace;
+    font-weight: 500;
+
+    transition: opacity 0.15s ease;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.column {
+  min-height: 450px;
+
+  background: #fafaf8;
+  border: 2px solid #e5e5dd;
+  border-radius: 16px;
+
+  padding: 1rem;
+
+  h2 {
+    margin-top: 0;
+
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+}
+
+.task {
+  background: white;
+
+  border: 1px solid #e5e5dd;
+  border-radius: 12px;
+
+  padding: 1rem;
+
+  margin-bottom: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  cursor: grab;
+
+  transition:
+    transform 0.15s ease,
+    border-color 0.15s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    border-color: #d0d0c8;
+  }
+
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+.taskTitle {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.95rem;
+}
+
+.deleteBtn {
+  border: none;
+
+  background: #ffe5e5;
+  color: #b00020;
+
+  border-radius: 8px;
+
+  padding: 0.45rem 0.7rem;
+
+  cursor: pointer;
+
+  transition: background 0.15s ease;
+
+  &:hover {
+    background: #ffd1d1;
+  }
+}
+
+@media (max-width: 900px) {
+  .board {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .card {
+    padding: 1.25rem;
+  }
+
+  .header {
+    h1 {
+      font-size: 1.6rem;
+    }
+  }
+
+  .taskForm {
+    flex-direction: column;
+  }
+}

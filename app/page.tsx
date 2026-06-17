@@ -33,7 +33,8 @@ export default function Home() {
           <div className={styles.puzzleContainer}>
             <h3 className={styles.puzzleTypeHeading}>Hard</h3>
             <div className={styles.puzzleList}>
-              <PuzzleCard link={{href: "/hard/weather-app"}} title="Weather App" type="javascript" difficulty="hard" />
+              <PuzzleCard link={{href: "/hard/weather-app"}} title="Weather App" type="react" difficulty="hard" />
+              <PuzzleCard link={{href: "/hard/kanban-board"}} title="Kanban Board" type="react" difficulty="hard" />
             </div>
           </div>
           {/* <PuzzleCard />  */}
