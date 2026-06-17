@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;700;800&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f4f4f0;
+  font-family: 'Syne', sans-serif;
+  color: #1a1a1a;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.card {
+  width: 100%;
+  max-width: 1200px;
+
+  background: white;
+  border: 1px solid #e0e0d8;
+  border-radius: 18px;
+
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.header h1 {
+  margin: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.header p {
+  margin: 0;
+  color: #7b7b72;
+  font-family: 'DM Mono', monospace;
+}
+
+.taskForm {
+  display: flex;
+  gap: 1rem;
+}
+
+.taskForm input {
+  flex: 1;
+
+  padding: 1rem;
+
+  border-radius: 12px;
+  border: 1px solid #d8d8d0;
+
+  background: #f8f8f5;
+
+  font-family: 'DM Mono', monospace;
+}
+
+.taskForm button {
+  border: none;
+
+  padding: 1rem 1.5rem;
+
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  background: #1a1a2e;
+  color: white;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.column {
+  min-height: 400px;
+
+  background: #fafaf8;
+  border: 2px solid #e5e5dd;
+  border-radius: 16px;
+
+  padding: 1rem;
+
+  transition: all 0.2s ease;
+}
+
+.column h2 {
+  margin-top: 0;
+}
+
+.dragOver {
+  border-color: #1a1a2e;
+  background: #f2f2ff;
+}
+
+.task {
+  background: white;
+
+  border: 1px solid #e5e5dd;
+  border-radius: 12px;
+
+  padding: 1rem;
+  margin-bottom: 1rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  cursor: grab;
+}
+
+.task:active {
+  cursor: grabbing;
+}
+
+.taskTitle {
+  font-family: 'DM Mono', monospace;
+}
+
+.taskActions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.taskActions button {
+  border: none;
+
+  cursor: pointer;
+
+  padding: 0.5rem 0.75rem;
+
+  border-radius: 8px;
+}
+
+.deleteBtn {
+  background: #ffdede;
+}
+
+@media (max-width: 768px) {
+  .board {
+    grid-template-columns: 1fr;
+  }
+
+  .taskForm {
+    flex-direction: column;
+  }
+}
