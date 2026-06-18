@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Memory Game</title>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <main class="container">
+    <div class="card">
+
+      <div class="header">
+        <h1>
+          Memory Game
+          <img
+            src="/JavaScript_logo.png"
+            width="24"
+            height="24"
+            alt="JS Logo"
+          />
+        </h1>
+
+        <p>Match all pairs to win</p>
+      </div>
+
+      <div class="stats">
+        <div>
+          <span>Moves</span>
+          <strong id="moves">0</strong>
+        </div>
+
+        <div>
+          <span>Time</span>
+          <strong id="timer">0s</strong>
+        </div>
+
+        <div>
+          <span>Best Score</span>
+          <strong id="bestScore">-</strong>
+        </div>
+      </div>
+
+      <button id="restartBtn" class="restartButton">
+        Restart Game
+      </button>
+
+      <div id="gameBoard" class="gameBoard"></div>
+
+    </div>
+  </main>
+
+  <div id="overlay" class="overlay hidden">
+    <div class="modal">
+      <h2>🎉 Congratulations!</h2>
+
+      <p>
+        You completed the game in
+        <b id="finalMoves"></b> moves
+      </p>
+
+      <p>
+        Time taken:
+        <b id="finalTime"></b>
+      </p>
+
+      <p>
+        Best Score:
+        <b id="finalBestScore"></b>
+      </p>
+
+      <button
+        id="playAgainBtn"
+        class="restartButton"
+      >
+        Play Again
+      </button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -72,6 +72,7 @@ export default function Home() {
             <div className={styles.puzzleList}>
               <PuzzleCard link={{href: "/vanilla-js/hard/weather-app/index.html"}} title="Weather App" type="javascript" difficulty="hard" />
               <PuzzleCard link={{href: "/vanilla-js/hard/kanban-board/index.html"}} title="Kanban Board" type="javascript" difficulty="hard" />
+              <PuzzleCard link={{href: "/vanilla-js/hard/memory-game/index.html"}} title="Memory Game" type="javascript" difficulty="hard" />
             </div>
           </div>
           {/* <PuzzleCard />  */}
