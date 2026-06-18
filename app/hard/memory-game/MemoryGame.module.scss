@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;700;800&display=swap');
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f4f4f0;
+  padding: 2rem;
+  font-family: 'Syne', sans-serif;
+}
+
+.card {
+  width: 100%;
+  max-width: 700px;
+  background: #fff;
+  border: 1px solid #e0e0d8;
+  border-radius: 18px;
+  padding: 2rem;
+}
+
+.header {
+  margin-bottom: 2rem;
+
+  h1 {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 800;
+  }
+
+  p {
+    margin-top: 0.5rem;
+    font-family: 'DM Mono', monospace;
+    color: #7b7b72;
+  }
+}
+
+.gameBoard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.memoryCard {
+  height: 120px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.memoryCardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flipped {
+  transform: rotateY(180deg);
+}
+
+.memoryCardFront,
+.memoryCardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  border-radius: 16px;
+  backface-visibility: hidden;
+}
+
+.memoryCardFront {
+  background: #fafaf8;
+  border: 1px solid #e5e5dd;
+}
+
+.memoryCardBack {
+  background: #eef8ef;
+  border: 1px solid #2e7d32;
+  transform: rotateY(180deg);
+}
+
+.memoryCard:hover {
+  transform: translateY(-2px);
+}
+
+.memoryCard {
+  transition: transform 0.15s ease;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.stats > div {
+  background: #fafaf8;
+  border: 1px solid #e5e5dd;
+  border-radius: 12px;
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.stats span {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.8rem;
+  color: #8a8a80;
+}
+
+.stats strong {
+  font-size: 1.4rem;
+}
+
+.restartButton {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  margin: 10px 0  ;
+}
+
+.winBanner {
+  margin-top: 2rem;
+
+  background: #fafaf8;
+  border: 1px solid #e5e5dd;
+  border-radius: 16px;
+
+  padding: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  text-align: center;
+}
+
+.winBanner h2 {
+  margin: 0;
+}
+
+.winBanner p {
+  margin: 0;
+}
+
+.winBanner button {
+  padding: 0.85rem 1rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  animation: fadeIn 0.2s ease;
+
+  background: rgba(0, 0, 0, 0.45);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 18px;
+
+  z-index: 100;
+}
+
+.modal {
+  width: 90%;
+  max-width: 420px;
+  animation: popIn 0.25s ease;
+  background: #ffffff;
+
+  border: 1px solid #e0e0d8;
+  border-radius: 18px;
+
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  text-align: center;
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+
+  h2 {
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+
+    font-family: 'DM Mono', monospace;
+    color: #6d6d65;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.matched {
+  background: #eef8ef;
+  border-color: #2e7d32;
+}

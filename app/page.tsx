@@ -35,6 +35,7 @@ export default function Home() {
             <div className={styles.puzzleList}>
               <PuzzleCard link={{href: "/hard/weather-app"}} title="Weather App" type="react" difficulty="hard" />
               <PuzzleCard link={{href: "/hard/kanban-board"}} title="Kanban Board" type="react" difficulty="hard" />
+              <PuzzleCard link={{href: "/hard/memory-game"}} title="Memory Game" type="react" difficulty="hard" />
             </div>
           </div>
           {/* <PuzzleCard />  */}
@@ -61,6 +62,7 @@ export default function Home() {
             <div className={styles.puzzleList}>
               <PuzzleCard link={{href: "/vanilla-js/medium/calculator/index.html"}} title="Calculator" type="javascript" difficulty="Medium" />
               <PuzzleCard link={{href: "/vanilla-js/medium/password-strength/index.html"}} title="Password Strength Checker" type="javascript" difficulty="Medium" />
+              <PuzzleCard link={{href: "/vanilla-js/medium/infinite-scroll/index.html"}} title="Infinite Scroll" type="javascript" difficulty="Medium" />
             </div>
           </div>
 
