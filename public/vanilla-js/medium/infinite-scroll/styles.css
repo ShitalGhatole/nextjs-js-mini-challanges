@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;700;800&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f4f4f0;
+  font-family: "Syne", sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.card {
+  width: 100%;
+  max-width: 700px;
+  background: white;
+  border: 1px solid #e0e0d8;
+  border-radius: 18px;
+  padding: 2rem;
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  margin: 0;
+  font-weight: 800;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.header p {
+  margin-top: 0.5rem;
+  color: #7b7b72;
+  font-family: "DM Mono", monospace;
+}
+
+.item {
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  background: #fafaf8;
+  border: 1px solid #e5e5dd;
+  border-radius: 12px;
+  font-family: "DM Mono", monospace;
+}
+
+.loader {
+  text-align: center;
+  display: none;
+}
