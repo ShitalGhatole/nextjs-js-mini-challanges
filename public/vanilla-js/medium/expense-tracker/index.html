@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <main class="container">
+    <div class="card">
+
+      <div class="header">
+        <h1>
+          Expense Tracker
+          <img src="/JavaScript_logo.png" alt="JavaScript Logo" width="24" height="24">
+        </h1>
+
+        <p>Track your income and expenses</p>
+      </div>
+
+      <div class="summary">
+        <div>
+          <span>Balance</span>
+          <strong id="balance">₹0</strong>
+        </div>
+
+        <div>
+          <span>Income</span>
+          <strong id="income">₹0</strong>
+        </div>
+
+        <div>
+          <span>Expense</span>
+          <strong id="expense">₹0</strong>
+        </div>
+      </div>
+
+      <form id="transactionForm" class="form">
+        <input type="text" id="description" placeholder="Description">
+
+        <input type="number" id="amount" placeholder="Amount">
+
+        <select id="type">
+          <option value="expense">
+            Expense
+          </option>
+
+          <option value="income">
+            Income
+          </option>
+        </select>
+
+        <button type="submit">
+          Add Transaction
+        </button>
+      </form>
+
+      <div class="transactionList" id="transactionList">
+      </div>
+
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
