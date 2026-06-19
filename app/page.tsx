@@ -26,6 +26,7 @@ export default function Home() {
               <PuzzleCard link={{href: "/medium/calculator"}} title="Calculator" type="react" difficulty="Medium" />
               <PuzzleCard link={{href: "/medium/password-strength-checker"}} title="Password Strength Checker" type="react" difficulty="Medium" />
               <PuzzleCard link={{href: "/medium/infinite-scroll"}} title="Infinite Scroll" type="react" difficulty="Medium" />
+              <PuzzleCard link={{href: "/medium/expense-tracker"}} title="Expense Tracker" type="react" difficulty="Medium" />
             </div>
           </div>
 
