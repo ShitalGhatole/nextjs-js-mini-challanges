@@ -16,7 +16,8 @@ const ExpenseTracker = () => {
   const [amount, setAmount] = useState("");
   const [type, setType] = useState<"income" | "expense">("expense");
   
-  // Load saved transactions from localStorage when the component mounts
+  // On first render, check if we have any previously saved
+  // transactions in localStorage and restore them into state
   useEffect(() => {
     const savedTransactions = localStorage.getItem("transactions");
 
@@ -25,7 +26,8 @@ const ExpenseTracker = () => {
     }
   }, []);
 
-  // save transactions to localStorage whenever they change
+  // Whenever a transaction is added or deleted,
+  // persist the latest state to localStorage
   useEffect(() => {
     localStorage.setItem("transactions", JSON.stringify(transactions));
   }, [transactions]);
