@@ -27,6 +27,7 @@ export default function Home() {
               <PuzzleCard link={{href: "/medium/password-strength-checker"}} title="Password Strength Checker" type="react" difficulty="Medium" />
               <PuzzleCard link={{href: "/medium/infinite-scroll"}} title="Infinite Scroll" type="react" difficulty="Medium" />
               <PuzzleCard link={{href: "/medium/expense-tracker"}} title="Expense Tracker" type="react" difficulty="Medium" />
+              <PuzzleCard link={{href: "/medium/pomodoro-timer"}} title="Pomodoro Timer" type="react" difficulty="Medium" />
             </div>
           </div>
 
@@ -64,6 +65,8 @@ export default function Home() {
               <PuzzleCard link={{href: "/vanilla-js/medium/calculator/index.html"}} title="Calculator" type="javascript" difficulty="Medium" />
               <PuzzleCard link={{href: "/vanilla-js/medium/password-strength/index.html"}} title="Password Strength Checker" type="javascript" difficulty="Medium" />
               <PuzzleCard link={{href: "/vanilla-js/medium/infinite-scroll/index.html"}} title="Infinite Scroll" type="javascript" difficulty="Medium" />
+              <PuzzleCard link={{href: "/vanilla-js/medium/expense-tracker/index.html"}} title="Expense Tracker" type="javascript" difficulty="Medium" />
+              <PuzzleCard link={{href: "/vanilla-js/medium/pomodoro-timer/index.html"}} title="Pomodoro Timer" type="javascript" difficulty="Medium" />
             </div>
           </div>
 

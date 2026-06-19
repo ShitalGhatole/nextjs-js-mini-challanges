@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;700;800&display=swap');
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f4f4f0;
+  padding: 2rem;
+  font-family: 'Syne', sans-serif;
+}
+
+.card {
+  width: 100%;
+  max-width: 650px;
+  background: #ffffff;
+  border: 1px solid #e0e0d8;
+  border-radius: 18px;
+  padding: 2rem;
+}
+
+.header {
+  margin-bottom: 2rem;
+
+  h1 {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 800;
+  }
+
+  p {
+    margin-top: 0.5rem;
+    font-family: 'DM Mono', monospace;
+    color: #7b7b72;
+  }
+}
+
+.timerSection {
+  background: #fafaf8;
+  border: 1px solid #e5e5dd;
+  border-radius: 16px;
+
+  padding: 2.5rem;
+  margin-bottom: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.status {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.running {
+  color: #2e7d32;
+}
+
+.paused {
+  color: #c62828;
+}
+
+.timer {
+  font-size: 5rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.sessionType {
+  margin: 0;
+  font-family: 'DM Mono', monospace;
+}
+
+.workSession {
+  color: #1565c0;
+}
+
+.breakSession {
+  color: #2e7d32;
+}
+
+.stats {
+  margin-bottom: 1.5rem;
+
+  display: flex;
+  justify-content: center;
+}
+
+.stats > div {
+  background: #fafaf8;
+  border: 1px solid #e5e5dd;
+  border-radius: 12px;
+
+  padding: 1rem 2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stats span {
+  font-family: 'DM Mono', monospace;
+  color: #8a8a80;
+  font-size: 0.8rem;
+}
+
+.stats strong {
+  margin-top: 0.25rem;
+  font-size: 1.5rem;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+}
+
+.actions button {
+  border: none;
+  border-radius: 12px;
+
+  padding: 1rem;
+
+  font-family: 'DM Mono', monospace;
+  font-size: 0.95rem;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.15s ease,
+    opacity 0.15s ease;
+}
+
+.actions button:hover {
+  transform: translateY(-2px);
+}
+
+.startButton {
+  background: #2e7d32;
+  color: white;
+}
+
+.pauseButton {
+  background: #c62828;
+  color: white;
+}
+
+.resetButton {
+  background: #fafaf8;
+  border: 1px solid #e5e5dd !important;
+}
+
+@media (max-width: 640px) {
+  .card {
+    padding: 1.25rem;
+  }
+
+  .timer {
+    font-size: 3.5rem;
+  }
+
+  .actions {
+    grid-template-columns: 1fr;
+  }
+}
