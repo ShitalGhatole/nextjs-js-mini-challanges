@@ -32,7 +32,7 @@ const ExpenseTracker = () => {
     localStorage.setItem("transactions", JSON.stringify(transactions));
   }, [transactions]);
 
-  const handleAddTransaction = (e) => {
+  const handleAddTransaction = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!description.trim()) {
