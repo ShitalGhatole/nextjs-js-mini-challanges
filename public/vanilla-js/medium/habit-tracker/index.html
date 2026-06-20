@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="header">
+        <h1>Habit Tracker</h1>
+        <p>Build consistency every day</p>
+      </div>
+
+      <div class="summary">
+        <div>
+          <span>Total Habits</span>
+          <strong id="totalHabits">0</strong>
+        </div>
+
+        <div>
+          <span>Completed Today</span>
+          <strong id="completedToday">0</strong>
+        </div>
+
+        <div>
+          <span>Completion Rate</span>
+          <strong id="completionRate">0%</strong>
+        </div>
+      </div>
+
+      <form id="habitForm" class="form">
+        <input
+          id="habitInput"
+          type="text"
+          placeholder="Enter a habit..."
+        />
+
+        <button type="submit">
+          Add Habit
+        </button>
+      </form>
+
+      <div id="habitList" class="habitList"></div>
+
+    </div>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>
