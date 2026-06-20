@@ -11,7 +11,10 @@ const PomodoroTimer = () => {
   const [isBreak, setIsBreak] = useState(false);
   const [completedSessions, setCompletedSessions] = useState(0);
 
-  const [audio] = useState(() => new Audio("/pomodoro-notification.mp3"));
+  const playNotification = () => {
+    const audio = new Audio('/notification.mp3')
+    audio.play()
+  }
 
   // handle timer countdown
   useEffect(() => {
@@ -43,8 +46,7 @@ const PomodoroTimer = () => {
       return;
     }
 
-    audio.currentTime = 0;
-    audio.play();
+    playNotification();
 
     if (isBreak) {
       setIsBreak(false);
@@ -59,7 +61,7 @@ const PomodoroTimer = () => {
 
       alert("🎉 Work session complete! Time for a break.");
     }
-  }, [timeLeft, isBreak, audio]);
+  }, [timeLeft, isBreak]);
 
   const handleReset = () => {
     setIsRunning(false);
