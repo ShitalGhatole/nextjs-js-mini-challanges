@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import styles from "./HabitTracker.module.scss";
+import dayjs from "dayjs";
 
 type Habit = {
   id: number;
@@ -15,22 +16,33 @@ const HabitTracker = () => {
   const [habits, setHabits] = useState<Habit[]>([]);
   const [habitName, setHabitName] = useState("");
 
-  // load habits from localStorage
+  // Load habits from localStorage
   useEffect(() => {
     const savedHabits = localStorage.getItem("habits");
 
-    if (savedHabits) {
-      setHabits(JSON.parse(savedHabits));
+    if (!savedHabits) {
+      return;
     }
+
+    const parsedHabits: Habit[] = JSON.parse(savedHabits);
+
+    const today = dayjs().format("YYYY-MM-DD");
+
+    const updatedHabits = parsedHabits.map((habit) => ({
+      ...habit,
+      completedToday: habit.lastCompletedDate === today,
+    }));
+
+    setHabits(updatedHabits);
   }, []);
 
-  //save habits to localStorage
+  // Save habits to localStorage
   useEffect(() => {
     localStorage.setItem("habits", JSON.stringify(habits));
   }, [habits]);
 
-  const handleAddHabit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const handleAddHabit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
 
     if (!habitName.trim()) {
       return;
@@ -54,7 +66,7 @@ const HabitTracker = () => {
   };
 
   const handleCompleteHabit = (id: number) => {
-    const today = new Date().toDateString();
+    const today = dayjs().format("YYYY-MM-DD");
 
     setHabits((prev) =>
       prev.map((habit) => {
@@ -66,11 +78,24 @@ const HabitTracker = () => {
           return habit;
         }
 
+        let newStreak = 1;
+
+        if (habit.lastCompletedDate) {
+          const daysDifference = dayjs(today).diff(
+            dayjs(habit.lastCompletedDate),
+            "day",
+          );
+
+          if (daysDifference === 1) {
+            newStreak = habit.streak + 1;
+          }
+        }
+
         return {
           ...habit,
+          streak: newStreak,
           completedToday: true,
           lastCompletedDate: today,
-          streak: habit.streak + 1,
         };
       }),
     );
@@ -103,16 +128,19 @@ const HabitTracker = () => {
         <div className={styles.summary}>
           <div>
             <span>Total Habits</span>
+
             <strong>{totalHabits}</strong>
           </div>
 
           <div>
             <span>Completed Today</span>
+
             <strong>{completedToday}</strong>
           </div>
 
           <div>
             <span>Completion Rate</span>
+
             <strong>{completionRate}%</strong>
           </div>
         </div>
@@ -122,7 +150,7 @@ const HabitTracker = () => {
             type="text"
             placeholder="Enter a habit..."
             value={habitName}
-            onChange={(e) => setHabitName(e.target.value)}
+            onChange={(event) => setHabitName(event.target.value)}
           />
 
           <button type="submit">Add Habit</button>
@@ -143,8 +171,8 @@ const HabitTracker = () => {
 
               <div className={styles.actions}>
                 <button
-                  onClick={() => handleCompleteHabit(habit.id)}
                   disabled={habit.completedToday}
+                  onClick={() => handleCompleteHabit(habit.id)}
                 >
                   {habit.completedToday ? "✓ Completed" : "Mark Complete"}
                 </button>
