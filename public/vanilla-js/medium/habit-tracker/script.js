@@ -7,13 +7,23 @@ const completionRateEl = document.getElementById("completionRate");
 
 let habits = JSON.parse(localStorage.getItem("habits")) || [];
 
+//reset completedToday when a new day starts
+const today = dayjs().format("YYYY-MM-DD");
+
+habits = habits.map((habit) => ({
+  ...habit,
+  completedToday: habit.lastCompletedDate === today,
+}));
+
 function saveHabits() {
   localStorage.setItem("habits", JSON.stringify(habits));
 }
 
 function updateSummary() {
   const totalHabits = habits.length;
+
   const completedToday = habits.filter((habit) => habit.completedToday).length;
+
   const completionRate =
     totalHabits === 0 ? 0 : Math.round((completedToday / totalHabits) * 100);
 
@@ -27,10 +37,10 @@ function renderHabits() {
 
   if (habits.length === 0) {
     habitList.innerHTML = `
-      <p class="emptyState">
-        No habits added yet
-      </p>
-    `;
+        <p class="emptyState">
+          No habits added yet
+        </p>
+      `;
 
     updateSummary();
     return;
@@ -40,29 +50,33 @@ function renderHabits() {
     const habitItem = document.createElement("div");
 
     habitItem.className = "habitItem";
+
     habitItem.innerHTML = `
-      <div>
-        <h3>${habit.name}</h3>
-        <p>🔥 Streak: ${habit.streak}</p>
-      </div>
+        <div>
+          <h3>${habit.name}</h3>
 
-      <div class="actions">
-        <button
-          class="completeBtn"
-          data-id="${habit.id}"
-          ${habit.completedToday ? "disabled" : ""}
-        >
-          ${habit.completedToday ? "✓ Completed" : "Mark Complete"}
-        </button>
+          <p>
+            🔥 Streak: ${habit.streak}
+          </p>
+        </div>
 
-        <button
-          class="deleteBtn"
-          data-id="${habit.id}"
-        >
-          Delete
-        </button>
-      </div>
-    `;
+        <div class="actions">
+          <button
+            class="completeBtn"
+            data-id="${habit.id}"
+            ${habit.completedToday ? "disabled" : ""}
+          >
+            ${habit.completedToday ? "✓ Completed" : "Mark Complete"}
+          </button>
+
+          <button
+            class="deleteBtn"
+            data-id="${habit.id}"
+          >
+            Delete
+          </button>
+        </div>
+      `;
 
     habitList.appendChild(habitItem);
   });
@@ -108,7 +122,7 @@ habitList.addEventListener("click", (event) => {
   if (target.classList.contains("completeBtn")) {
     const id = Number(target.dataset.id);
 
-    const today = new Date().toDateString();
+    const today = dayjs().format("YYYY-MM-DD");
 
     habits = habits.map((habit) => {
       if (habit.id !== id) {
@@ -119,11 +133,24 @@ habitList.addEventListener("click", (event) => {
         return habit;
       }
 
+      let newStreak = 1;
+
+      if (habit.lastCompletedDate) {
+        const daysDifference = dayjs(today).diff(
+          dayjs(habit.lastCompletedDate),
+          "day",
+        );
+
+        if (daysDifference === 1) {
+          newStreak = habit.streak + 1;
+        }
+      }
+
       return {
         ...habit,
+        streak: newStreak,
         completedToday: true,
         lastCompletedDate: today,
-        streak: habit.streak + 1,
       };
     });
 
