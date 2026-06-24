@@ -54,10 +54,7 @@ function renderHabits() {
     habitItem.innerHTML = `
         <div>
           <h3>${habit.name}</h3>
-
-          <p>
-            🔥 Streak: ${habit.streak}
-          </p>
+          <p>🔥 Streak: ${habit.streak}</p>
         </div>
 
         <div class="actions">
@@ -69,10 +66,7 @@ function renderHabits() {
             ${habit.completedToday ? "✓ Completed" : "Mark Complete"}
           </button>
 
-          <button
-            class="deleteBtn"
-            data-id="${habit.id}"
-          >
+          <button class="deleteBtn" data-id="${habit.id}">
             Delete
           </button>
         </div>
